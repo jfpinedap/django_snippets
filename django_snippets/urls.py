@@ -20,4 +20,5 @@ from django.contrib import admin
 urlpatterns = [
     path('', include('snippets.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
