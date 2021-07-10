@@ -1,5 +1,5 @@
 # Summary
-This application is a kind of blog to publish snippets.
+[Django Snippet](https://django-snippets-001.herokuapp.com). application is a kind of blog to publish snippets.
 
 # MBC Code Challenge
 * Los usuarios no registrados sólo pueden ver los snippets públicos.
