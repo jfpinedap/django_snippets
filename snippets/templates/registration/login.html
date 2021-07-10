@@ -71,6 +71,13 @@
           {% csrf_token %}
           {{ form|crispy }}
           <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+          <hr />
+          {% if settings.SOCIAL_AUTH_GITHUB_KEY %}
+          <a class="btn btn-info" role="button" href="{% url 'social:begin' 'github' %}?next={{ next }}">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            Login with GitHub
+          </a>
+          {% endif %}
         </form>
         <!-- FIN FORMULARIO -->
 
