@@ -16,6 +16,7 @@ from .owner import (
     OwnerListView,
 )
 from .forms import SnippetForm
+from .tasks import sendEmail
 
 
 class IndexView(OwnerListView):
@@ -93,6 +94,13 @@ class SnippetAddView(LoginRequiredMixin, View):
         _snippet = form.save(commit=False)
         _snippet.user = self.request.user
         _snippet.save()
+
+        # send confirmation email
+        sendEmail.delay(
+            subject=_snippet.name,
+            body=_snippet.description,
+            email=_snippet.user.email
+        )
         return redirect(self.success_url)
 
 
