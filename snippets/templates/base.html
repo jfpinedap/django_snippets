@@ -33,7 +33,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{% url 'snippet_add' %}">Cargar Snippets</a>
-                            <a class="dropdown-item" href="{% url 'index' %}">Listado de Snippets</a>
+                            <a class="dropdown-item" href="{% url 'user_snippets' user.username %}">Listado de Snippets</a>
                         </div>
                     </li>
                     <li class="nav-item">
