@@ -83,7 +83,7 @@ class SnippetAddView(LoginRequiredMixin, View):
         return render(request, self.template_name, context)
 
     def post(self, request):
-        form = SnippetForm(request.POST, request.FILES or None)
+        form = SnippetForm(request.POST)
 
         if not form.is_valid():
             context = {'form': form, 'create': True}
